@@ -46,7 +46,7 @@ public class BitcoinController {
         return ResponseEntity.ok().body(iServiceBitcoin.findAll());}
 
     @GetMapping("/average")
-    public ResponseEntity<Object>getAverageBitcoins(@RequestParam String date, String date2) throws ParseException {
+    public ResponseEntity<Object>getAverageBitcoins(@RequestParam(name ="HH:MM:SS") String date,String date2) throws ParseException {
         List<BitcoinEntity>bitcoinEntityList=new ArrayList<>();
         iServiceBitcoin.findAll().forEach(bitcoinEntityList::add);
         Date newDate = new SimpleDateFormat(FORMAT_DATE).parse(date);
@@ -55,7 +55,7 @@ public class BitcoinController {
 
     }
     @GetMapping("/varporc")
-    public ResponseEntity<Object>getVarPorcBitcoins(@RequestParam String date, String date2) throws ParseException {
+    public ResponseEntity<Object>getVarPorcBitcoins(@RequestParam(name ="HH:MM:SS") String date,String date2) throws ParseException {
        List<BitcoinEntity>bitcoinEntities=new ArrayList<>();
        iServiceBitcoin.findAll().forEach(bitcoinEntities::add);
         Date newDate = new SimpleDateFormat(FORMAT_DATE).parse(date);
