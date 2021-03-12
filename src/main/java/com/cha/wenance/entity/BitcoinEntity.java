@@ -1,5 +1,6 @@
 package com.cha.wenance.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -9,8 +10,6 @@ import java.util.Date;
 
 @Entity
 @Table(name = "Bitcoin")
-@NoArgsConstructor
-@AllArgsConstructor
 public class BitcoinEntity {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,7 +30,8 @@ public class BitcoinEntity {
     public Long getId() {
         return id;
     }
-
+    public BitcoinEntity(){}
+    public BitcoinEntity(Long id,double lprice,String curr1,String curr2){}
     public void setId(Long id) {
         this.id = id;
     }

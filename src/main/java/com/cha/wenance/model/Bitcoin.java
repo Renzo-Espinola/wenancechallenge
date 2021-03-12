@@ -9,8 +9,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class Bitcoin {
     private Long id;
     private double lprice;
@@ -18,4 +17,6 @@ public class Bitcoin {
     private String curr2;
     private Date dateBitCoin;
     public void prePersist(){this.dateBitCoin=new Date();}
+    public Bitcoin(){}
+    public Bitcoin(Long id,double lprice,String curr1,String curr2){}
 }
